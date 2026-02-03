@@ -10,8 +10,9 @@ wheels/
 .venv
 
 # Datasets
-data/raw/instagram_usage_lifestyle.csv
+data/
 
 # Logs and reports
-logs/crimson_nebula.log
-ydata.html
+logs/
+src/eda/
+mlruns/
