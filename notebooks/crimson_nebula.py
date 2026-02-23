@@ -17,7 +17,6 @@ def _():
     import seaborn as sns
     import matplotlib.pyplot as plt
 
-
     # Sklearn preprocessing libraries
     from sklearn.pipeline import Pipeline
     from sklearn.decomposition import PCA
@@ -30,31 +29,25 @@ def _():
         RandomizedSearchCV,
     )
 
-
     # Regression libraries
     from sklearn.linear_model import LinearRegression, Ridge
     from sklearn.ensemble import VotingRegressor, StackingRegressor
     from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 
-
     # Y-data profinling
-    from ydata_profiling import ProfileReport   
-
+    from ydata_profiling import ProfileReport
 
     # metrices
     from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-
 
     # ignore warnings
     import warnings
 
     warnings.filterwarnings("ignore")
 
-
     # logging
     import logging
     from pathlib import Path
-
 
     # ML Flow
     import mlflow
@@ -137,13 +130,15 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     **Decisions based on y-data profiling:**
 
     - Have to drop *user_id, app__name, last_login_date* features.
     - Have to impute the missing values in the *perceived_stress_score, hobbies_count, social_events_per_month, travel_frequency_per_year, posts_created_per_week, ads_clicked_per_day, linked_accounts_count* features.
     - Have to convert the categorical values into numerical values
-    """)
+    """
+    )
     return
 
 
@@ -185,9 +180,7 @@ def _():
 
 @app.cell
 def _(X):
-    numerical_features = X.select_dtypes(
-        include=["int64", "float64"]
-    ).columns.tolist()
+    numerical_features = X.select_dtypes(include=["int64", "float64"]).columns.tolist()
     categorical_features = X.select_dtypes(
         include=["object", "category"]
     ).columns.tolist()
@@ -231,9 +224,11 @@ def _():
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     **Imputing the missing values for both numerical and categorical features**
-    """)
+    """
+    )
     return
 
 
@@ -369,9 +364,11 @@ def _(Ridge, StackingRegressor, gb_reg, lr_reg, rf_reg):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     **Model Training**
-    """)
+    """
+    )
     return
 
 
@@ -391,9 +388,11 @@ def _(gb_reg, lr_reg, rf_reg, stacking_reg, voting_reg):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     **Model Training and Evaluation**
-    """)
+    """
+    )
     return
 
 
@@ -402,7 +401,7 @@ app._unparsable_cell(
     for _name, _model in model_to_train.items():
         with mlflow.start_run
     """,
-    name="_"
+    name="_",
 )
 
 
@@ -495,9 +494,11 @@ def _(results_df):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     **Principal Component Analysis**
-    """)
+    """
+    )
     return
 
 
@@ -897,9 +898,11 @@ def _(random_results_df):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     **Choose best model**
-    """)
+    """
+    )
     return
 
 
@@ -941,9 +944,11 @@ def _(best_model_info):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""
+    mo.md(
+        r"""
     **Save the model**
-    """)
+    """
+    )
     return
 
 
@@ -1024,9 +1029,7 @@ def _(
         # Update best_model to be the full pipeline
         best_model_r = full_pipeline_retrain
 
-        logger.info(
-            "Model retrained successfully on full dataset with preprocessor"
-        )
+        logger.info("Model retrained successfully on full dataset with preprocessor")
 
     except Exception as e:
         logger.error(f"Error retraining model: {str(e)}", exc_info=True)
