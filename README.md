@@ -13,5 +13,83 @@ Yeah, I have used artificial intelligence (AI) in my project, but not blindly. I
 ## Project Architecture
 
 <!-- readme-tree start -->
+```
+.
+├── .github
+│   └── workflows
+│       ├── Auto_Tree.yaml
+│       └── Auto_Tree.yaml:Zone.Identifier
+├── .gitignore
+├── .gradio
+│   └── flagged
+│       └── dataset1.csv
+├── 02_Notebooks
+│   ├── 01_Data_Collection
+│   │   ├── 01_Raw_Data_Collection.py
+│   │   └── 02_Raw_Data_Cleaning.py
+│   ├── 02_Data_Preprocessing
+│   │   ├── 01_Exploratory_Data_Analysis.py
+│   │   └── 02_Principal_Component_Analysis.py
+│   ├── 03_Model_Selection
+│   │   ├── 01_Model_Selection_with_PCA
+│   │   │   ├── 01_Random_Forest
+│   │   │   │   ├── 01_Model_Training.py
+│   │   │   │   └── 02_Hyperparameters_Optimization.py
+│   │   │   ├── 02_K_Nearest_Neighbors
+│   │   │   │   ├── 01_Model_Training.py
+│   │   │   │   └── 02_Hyperparameters_Optimization.py
+│   │   │   ├── 03_Gradient_Boosting
+│   │   │   │   ├── 01_Model_Training.py
+│   │   │   │   └── 02_Hyperparameters_Optimization.py
+│   │   │   ├── 04_Extreme_Gradient_Boosting
+│   │   │   │   ├── 01_Model_Training.py
+│   │   │   │   └── 02_Hyperparameters_Optimization.py
+│   │   │   ├── 05_Adaptive_Boosting
+│   │   │   │   ├── 01_Model_Training.py
+│   │   │   │   └── 02_Hyperparameters_Optimization.py
+│   │   │   └── 06_Light_Gradient_Boosting_Machine
+│   │   │       ├── 01_Model_Training.py
+│   │   │       └── 02_Hyperparameters_Optimization.py
+│   │   └── 02_Model_Selection_without_PCA
+│   │       ├── 01_Random_Forest
+│   │       │   ├── 01_Model_Training.py
+│   │       │   └── 02_Hyperparameters_Optimization.py
+│   │       ├── 02_K_Nearest_Neighbors
+│   │       │   ├── 01_Model_Training.py
+│   │       │   └── 02_Hyperparameters_Optimization.py
+│   │       ├── 03_Gradient_Boosting
+│   │       │   ├── 01_Model_Training.py
+│   │       │   └── 02_Hyperparameters_Optimization.py
+│   │       ├── 04_Extreme_Gradient_Boosting
+│   │       │   ├── 01_Model_Training.py
+│   │       │   └── 02_Hyperparameters_Optimization.py
+│   │       ├── 05_Adaptive_Boosting
+│   │       │   ├── 01_Model_Training.py
+│   │       │   └── 02_Hyperparameters_Optimization.py
+│   │       └── 06_Light_Gradient_Boosting_Machine
+│   │           ├── 01_Model_Training.py
+│   │           └── 02_Hyperparameters_Optimization.py
+│   ├── 04_Model_Training
+│   │   └── 01_Model_Training.py
+│   └── crimson_nebula.py
+├── 03_Resources
+│   ├── 1-s2.0-S1359836825012260-main.pdf
+│   └── Docs
+│       └── EDA_Decisions.md
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
+├── Source
+│   ├── Gradio
+│   │   └── app.py
+│   └── Models
+│       ├── best_model.pkl
+│       ├── best_model_full_dataset.pkl
+│       └── crimson_nebula.pkl
+├── requirements.txt
+└── tree.bak
 
+29 directories, 46 files
+```
 <!-- readme-tree end -->
