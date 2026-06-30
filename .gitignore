@@ -5,12 +5,13 @@ build/
 dist/
 wheels/
 *.egg-info
+__marimo__/
 
 # Virtual environments
 .venv
 
 # Datasets
-data/
+01_Data/
 
 # Logs and reports
 logs/
